@@ -41,56 +41,51 @@
 
 <table>
     <tr>
-        <th>spring-cloud升级</th>
+        <th rowspan="4">spring-cloud升级</th>
+    </tr>
+    <tr>
         <th>组件名称</th>
         <th>升级前组件</th>
         <th>升级后组件</th>
         <th>可选组件</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务注册中心</th>
         <th>Eureka</th>
         <th>Nacos</th>
         <th>Zookeeper|Consul|Nacos</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务调用1</th>
         <th>Ribbon</th>
         <th>LoadBalance</th>
         <th>Ribbon</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务调用2</th>
         <th>Feign</th>
         <th>OpenFeign</th>
         <th>OpenFeign</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务降级</th>
         <th>Hystrix</th>
         <th>sentienl</th>
         <th>sentienl</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务网关</th>
         <th>Zuul</th>
         <th>gateway</th>
         <th>gateway</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务配置</th>
         <th>Config</th>
         <th>Nacos</th>
         <th>Nacos</th>
     </tr>
     <tr>
-        <th></th>
         <th>服务总线</th>
         <th>Bus</th>
         <th>Nacos</th>
