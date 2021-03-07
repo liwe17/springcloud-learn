@@ -2,6 +2,8 @@ package com.weiliai.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * @Describe: 订单模块启动类
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class ConsumerOrderMain80 {
 
     public static void main(String[] args) {
@@ -21,6 +24,7 @@ public class ConsumerOrderMain80 {
      * 此处可以新建配置类加入,也可以在主类直接写
      */
     @Bean
+    @LoadBalanced //集群需要配置调用策略
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }

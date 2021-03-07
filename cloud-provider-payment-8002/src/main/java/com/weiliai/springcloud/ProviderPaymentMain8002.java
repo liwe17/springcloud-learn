@@ -2,7 +2,7 @@ package com.weiliai.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Author: Doug Li
@@ -10,12 +10,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @Describe: 支付模块启动类
  */
 @SpringBootApplication
-//@EnableEurekaClient
-@EnableDiscoveryClient //可以替换@EnableEurekaClient 只使用eureka注册中心,适用于其他服务中心
-public class ProviderPaymentMain8001 {
+@EnableEurekaClient
+public class ProviderPaymentMain8002 {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderPaymentMain8001.class,args);
+        SpringApplication.run(ProviderPaymentMain8002.class,args);
     }
 
 }

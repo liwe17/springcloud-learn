@@ -6,10 +6,7 @@ import com.weiliai.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 /**
  * @Author: Doug Li
@@ -27,9 +24,6 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @Resource
-    private DiscoveryClient discoveryClient;
-
     @PostMapping("/")
     public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
@@ -43,20 +37,6 @@ public class PaymentController {
         if(null==payment)
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
         return new CommonResult<Payment>(200,"查询成功,serverPort: "+serverPort+serverPort,payment);
-    }
-
-    @GetMapping("/discovery")
-    public DiscoveryClient getDiscoveryClientInfo(){
-        //获取注册的服务
-        discoveryClient.getServices().forEach(element->{
-            log.info("*****element: [{}]",element);
-        });
-        //获取对应服务的提供者信息
-        discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE").forEach(instance->{
-            log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
-        });
-
-        return discoveryClient;
     }
 
 }

@@ -12,6 +12,10 @@
     <artifactId>cloud-consumer-order-80</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
         <!-- 引入自己定义的api通用包Entity -->
         <dependency>
             <groupId>com.weiliai</groupId>
