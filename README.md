@@ -41,7 +41,7 @@
 
 <table>
     <tr>
-        <th rowspan="4">spring-cloud升级</th>
+        <th colspan="4">spring-cloud升级</th>
     </tr>
     <tr>
         <th>组件名称</th>
