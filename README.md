@@ -5,7 +5,7 @@
 
 ## 项目搭建
 
-- 搭建环境
+### 搭建环境
 
 <table>
     <tr>
@@ -37,7 +37,7 @@
     </tr>
 </table>
 
-- 软件升级说明
+### 软件升级说明
 
 <table>
     <tr>
@@ -93,3 +93,53 @@
     </tr>
 </table>
 
+### 模块说明
+
+<table>
+    <tr>
+        <th>模块名称</th>
+        <th>模块说明</th>
+    </tr>
+    <tr>
+        <th>cloud-api-commons</th>
+        <th>平台通用实体或工具</th>
+    </tr>
+    <tr>
+        <th>cloud-eureka-server-7001</th>
+        <th>基于eureka的注册中心1</th>
+    </tr>
+    <tr>
+        <th>cloud-eureka-server-7002</th>
+        <th>基于eureka的注册中心2</th>
+    </tr>
+    <tr>
+        <th>cloud-consumer-order-80</th>
+        <th>基于eureka的服务消费者</th>
+    </tr>
+    <tr>
+        <th>cloud-provider-payment-8001</th>
+        <th>基于eureka的服务提供者1</th>
+    </tr>
+    <tr>
+        <th>cloud-provider-payment-8002</th>
+        <th>基于eureka的服务提供者2</th>
+    </tr>
+    <tr>
+        <th>cloud-consumer-zk-order-81</th>
+        <th>基于zookeeper的服务提供者</th>
+    </tr>
+    <tr>
+        <th>cloud-provider-payment-8004</th>
+        <th>基于zookeeper的服务提供者</th>
+    </tr>
+    <tr>
+        <th>cloud-consumer-order-82</th>
+        <th>基于consul的服务消费者</th>
+    </tr>
+    <tr>
+        <th>cloud-provider-payment-8006</th>
+        <th>基于consul的服务提供者</th>
+    </tr>
+    
+    
+</table>

@@ -30,6 +30,7 @@ public class PaymentController {
     @Resource
     private DiscoveryClient discoveryClient;
 
+    @SuppressWarnings("rawtypes")
     @PostMapping("/")
     public CommonResult create(@RequestBody Payment payment){
         int result = paymentService.create(payment);
@@ -37,12 +38,13 @@ public class PaymentController {
         return new CommonResult(200,"插入数据库成功,serverPort: "+serverPort,result);
     }
 
+    @SuppressWarnings("rawtypes")
     @GetMapping(value = "/{id}")
-    public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
+    public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         if(null==payment)
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
-        return new CommonResult<Payment>(200,"查询成功,serverPort: "+serverPort+serverPort,payment);
+        return new CommonResult<>(200,"查询成功,serverPort: "+serverPort+serverPort,payment);
     }
 
     @GetMapping("/discovery")
