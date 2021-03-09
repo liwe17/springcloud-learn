@@ -4,9 +4,10 @@ import com.weiliai.springcloud.entities.CommonResult;
 import com.weiliai.springcloud.entities.Payment;
 import com.weiliai.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: Doug Li
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/payment")
 public class PaymentController {
 
-    @Autowired
+    @Resource
     private PaymentService paymentService;
 
     @Value("${server.port}")
@@ -36,7 +37,12 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         if(null==payment)
             return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
-        return new CommonResult<Payment>(200,"查询成功,serverPort: "+serverPort+serverPort,payment);
+        return new CommonResult<Payment>(200,"查询成功,serverPort: "+serverPort,payment);
+    }
+
+    @GetMapping(value = "/lb")
+    public String getPaymentLB() {
+        return serverPort;
     }
 
 }

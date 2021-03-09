@@ -4,7 +4,6 @@ import com.weiliai.springcloud.entities.CommonResult;
 import com.weiliai.springcloud.entities.Payment;
 import com.weiliai.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ import javax.annotation.Resource;
 @RequestMapping("/payment")
 public class PaymentController {
 
-    @Autowired
+    @Resource
     private PaymentService paymentService;
 
     @Value("${server.port}")
@@ -32,33 +31,37 @@ public class PaymentController {
 
     @SuppressWarnings("rawtypes")
     @PostMapping("/")
-    public CommonResult create(@RequestBody Payment payment){
+    public CommonResult create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
-        log.info("*****插入结果:[{}]",result);
-        return new CommonResult(200,"插入数据库成功,serverPort: "+serverPort,result);
+        log.info("*****插入结果:[{}]", result);
+        return new CommonResult(200, "插入数据库成功,serverPort: " + serverPort, result);
     }
 
     @SuppressWarnings("rawtypes")
     @GetMapping(value = "/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
-        if(null==payment)
-            return new CommonResult(444,"没有对应记录,查询ID: "+id,null);
-        return new CommonResult<>(200,"查询成功,serverPort: "+serverPort+serverPort,payment);
+        if (null == payment)
+            return new CommonResult(444, "没有对应记录,查询ID: " + id, null);
+        return new CommonResult<>(200, "查询成功,serverPort: " + serverPort, payment);
     }
 
     @GetMapping("/discovery")
-    public DiscoveryClient getDiscoveryClientInfo(){
+    public DiscoveryClient getDiscoveryClientInfo() {
         //获取注册的服务
-        discoveryClient.getServices().forEach(element->{
-            log.info("*****element: [{}]",element);
+        discoveryClient.getServices().forEach(element -> {
+            log.info("*****element: [{}]", element);
         });
         //获取对应服务的提供者信息
-        discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE").forEach(instance->{
-            log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
+        discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE").forEach(instance -> {
+            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
         });
 
         return discoveryClient;
     }
 
+    @GetMapping(value = "/lb")
+    public String getPaymentLB() {
+        return serverPort;
+    }
 }
