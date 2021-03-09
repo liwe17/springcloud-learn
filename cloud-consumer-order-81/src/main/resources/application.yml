@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-consumer-order
+    name: zk-consumer-order
   cloud:
     #注册到zookeeper地址
     zookeeper:
