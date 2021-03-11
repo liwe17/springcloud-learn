@@ -24,10 +24,8 @@ public class MyLb implements LoadBalancer {
         int next;
         do{
             current = atoInt.get();
-            System.err.println("================="+current+"====================");
-            next = Math.max((current + 1), 0);
+            next = Math.max((current + 1), 0); //防止溢出
         }while (!atoInt.compareAndSet(current,next));
-        System.err.println("================="+next+"====================");
         final int size = next%serviceInstances.size();
         return serviceInstances.get(size);
     }
