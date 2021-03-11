@@ -117,6 +117,10 @@
         <th>基于eureka的服务消费者</th>
     </tr>
     <tr>
+        <th>cloud-consumer-order-83</th>
+        <th>基于openfeign的服务消费者</th>
+    </tr>
+    <tr>
         <th>cloud-provider-payment-8001</th>
         <th>基于eureka的服务提供者1</th>
     </tr>
