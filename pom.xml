@@ -22,6 +22,8 @@
         <module>cloud-provider-payment-8006</module>
         <module>cloud-consumer-order-82</module>
         <module>cloud-consumer-order-83</module>
+        <module>cloud-consumer-order-84</module>
+        <module>cloud-provider-payment-8008</module>
     </modules>
 
     <!-- 版本号统一管理 -->
