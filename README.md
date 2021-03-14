@@ -144,6 +144,14 @@
         <th>cloud-provider-payment-8006</th>
         <th>基于consul的服务提供者</th>
     </tr>
+    <tr>
+        <th>cloud-consumer-order-84</th>
+        <th>测试hystrix的服务消费者</th>
+    </tr>
+    <tr>
+        <th>cloud-provider-payment-8008</th>
+        <th>测试hystrix的服务提供者</th>
+    </tr>
     
     
 </table>
