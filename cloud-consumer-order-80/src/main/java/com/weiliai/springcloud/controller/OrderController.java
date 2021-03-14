@@ -24,7 +24,7 @@ public class OrderController {
 //    private static final String PAYMENT_URL = "http://localhost:8001/payment/"; //单机使用
 
     //单机或者集群可以使用,集群时,restTemplate需要配置负载均衡,否则无法确认使用具体那台服务
-    private static final String PAYMENT_URL = "http://cloud-payment-service/payment/";
+    private static final String PAYMENT_URL = "http://eureka-payment-service/payment/";
 
     @Resource
     private RestTemplate restTemplate;

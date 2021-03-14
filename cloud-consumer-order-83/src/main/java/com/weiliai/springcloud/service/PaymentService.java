@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date 2021/3/11
  * @Describe: 基于openfeign业务接口
  */
-@FeignClient(value = "CLOUD-PAYMENT-SERVICE")
+@FeignClient(value = "EUREKA-PAYMENT-SERVICE")
 public interface PaymentService {
 
     @GetMapping(value = "/payment/{id}")

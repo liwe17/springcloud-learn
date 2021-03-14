@@ -3,8 +3,9 @@ package com.weiliai.springcloud.service.impl;
 import com.weiliai.springcloud.dao.PaymentDao;
 import com.weiliai.springcloud.entities.Payment;
 import com.weiliai.springcloud.service.PaymentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @Author: Doug Li
@@ -14,7 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PaymentServiceImpl implements PaymentService {
 
-    @Autowired
+    @Resource
     private PaymentDao paymentDao;
 
     @Override
