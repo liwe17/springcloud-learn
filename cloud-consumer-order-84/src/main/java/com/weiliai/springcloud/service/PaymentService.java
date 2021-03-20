@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @Date 2021/3/14
  * @Describe: 基于openfeign业务接口
  */
-@FeignClient(value = "EUREKA-PAYMENT-SERVICE")
+@FeignClient(value = "EUREKA-PAYMENT-SERVICE",fallback = PaymentFallbackService.class)
 public interface PaymentService {
 
     @GetMapping(value = "/payment/hystrix/ok/{id}")

@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @SpringBootApplication
 @EnableEurekaClient
 //@EnableCircuitBreaker
-//@EnableHystrix //关闭server端服务降级继承@EnableCircuitBreaker
+@EnableHystrix //关闭server端服务降级继承@EnableCircuitBreaker
 public class ProviderHystrixPaymentMain8006 {
 
     public static void main(String[] args) {
