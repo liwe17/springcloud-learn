@@ -149,9 +149,14 @@
         <th>测试hystrix的服务消费者</th>
     </tr>
     <tr>
+        <th>cloud-hystrix-dashboard-9000</th>
+        <th>服务监控模块hystrix</th>
+    </tr>
+    <tr>
         <th>cloud-provider-payment-8008</th>
         <th>测试hystrix的服务提供者</th>
     </tr>
+    
     
     
 </table>
