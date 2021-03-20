@@ -24,6 +24,7 @@
         <module>cloud-consumer-order-83</module>
         <module>cloud-consumer-order-84</module>
         <module>cloud-provider-payment-8008</module>
+        <module>cloud-hystrix-dashboard-9000</module>
     </modules>
 
     <!-- 版本号统一管理 -->
