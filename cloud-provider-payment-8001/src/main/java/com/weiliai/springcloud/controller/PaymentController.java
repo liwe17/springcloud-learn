@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @Slf4j
 @RequestMapping("/payment")
+@SuppressWarnings("all")
 public class PaymentController {
 
     @Resource
@@ -30,7 +31,6 @@ public class PaymentController {
     @Resource
     private DiscoveryClient discoveryClient;
 
-    @SuppressWarnings("rawtypes")
     @PostMapping("/")
     public CommonResult create(@RequestBody Payment payment) {
         int result = paymentService.create(payment);
@@ -38,7 +38,6 @@ public class PaymentController {
         return new CommonResult(200, "插入数据库成功,serverPort: " + serverPort, result);
     }
 
-    @SuppressWarnings("rawtypes")
     @GetMapping(value = "/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
@@ -63,6 +62,12 @@ public class PaymentController {
 
     @GetMapping(value = "/lb")
     public String getPaymentLB() {
+        return serverPort;
+    }
+
+    @GetMapping(value = "/print/{id}")
+    public String printById(@PathVariable("id") Long id) {
+        log.info("*****id:[{}]",id);
         return serverPort;
     }
 
