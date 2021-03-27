@@ -156,7 +156,8 @@
         <th>cloud-provider-payment-8008</th>
         <th>测试hystrix的服务提供者</th>
     </tr>
-    
-    
-    
+    <tr>
+        <th>cloud-front-gateway-9527</th>
+        <th>网关gateway模块</th>
+    </tr>
 </table>
