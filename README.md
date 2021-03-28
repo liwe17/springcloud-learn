@@ -158,6 +158,18 @@
     </tr>
     <tr>
         <th>cloud-front-gateway-9527</th>
-        <th>网关gateway模块</th>
+        <th>基于gateway网关模块</th>
+    </tr>
+    <tr>
+        <th>cloud-config-center-3344</th>
+        <th>基于spring-config-server模块</th>
+    </tr>
+    <tr>
+        <th>cloud-config-client-3355</th>
+        <th>基于spring-config-client模块1</th>
+    </tr>
+    <tr>
+        <th>cloud-config-client-3366</th>
+        <th>基于spring-config-client模块2</th>
     </tr>
 </table>
